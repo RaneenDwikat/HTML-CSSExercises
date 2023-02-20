@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .header{
+                display: block;
+                background-color: yellow;
+                border: 1px solid blue;
+                padding: 10px;
+                margin: 0px;
+            }
+            .zeyad{
+                color: red;
+                display: block;
+                border: 1px solid black;
+                width: 60px;
+                height: 80px;
+            }
+            .relativeClass{
+
+                display: block;
+                position: relative;
+                width: 400px;
+                height: 150px;
+                border: 3px solid orange;
+            }
+            .absoluteClass{
+                display: block;
+                position: absolute;
+                width: 150px;
+                height: 100px;
+                left:245px;
+                bottom: 10px;
+                border: 3px solid blue; 
+            }
+            .overflowP{
+                margin: 10px;
+                padding: 5px;
+                background-color: lightgray;
+                width: 200px;
+                height: 100px;
+                overflow: scroll;
+                border: 1px dotted black;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Isra Software and Computer Company was established in 1997 in Nablus as a specialized in the production of software at palestine and Arab Countries.
+            <span class="header">ISCOSOFT</span>
+            includes more than 50 employees distributed in the following main departments (Research and Development, Training and Operation, Marketing and Sales, Finance, Audit and Quality).
+        </p>
+        <div style="display: block;"><p style="font-size: 24px;"><b>display: block </b></p></div>
+        <div>
+            <p>My name is:<br> <span class="zeyad" >Zeyad</span> <span class="zeyad">Abed Aljalil</span>I'm a Software Development Engineer at ISCOSOFT
+            </p>
+        </div>
+        <div class="relativeClass">
+            This div element has position: relative;
+            <div class="absoluteClass">
+                This div element has position: absolute;
+            </div>
+        </div>
+        <div class="overflowP">
+            You can use the overflow property when you want to have better control of the layout. The overflow property specifies what happens if content overflows an element's box.
+        </div>
+        <a href="page4.html">next page</a><br>
+        <a href="page2.html">previous page</a><br>
+    </body>
+</html>

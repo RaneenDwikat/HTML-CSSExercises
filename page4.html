@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML And CSS #4 exercise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .header {
+        background-color: grey;
+        color: white;
+        width: 100%;
+        height: 150px;
+        font-size: 30px;
+        padding: 20px;
+        text-align: center;
+      }
+
+      nav {
+        display: block;
+        background-color: lightgray;
+        float: left;
+        width: 20%;
+        height: 500px;
+      }
+      article {
+        background-color: white;
+        height: 500px;
+        padding: 20px;
+        width: 80%;
+        float: left;
+      }
+      footer {
+  background-color: gray;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+      @media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img
+        style="float: left; padding: 10px"
+        src="company.png"
+        alt="ISCOSOFT"
+      />
+      <b>Isra' Software & Computer Co.</b>
+    </div>
+    <section>
+      <nav>
+        <ul style="list-style-type: none">
+          <li><a href="#">Products</a></li>
+          <li><a href="#">contact Us</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+      <article>
+        <h1>ISCOSOFT</h1>
+        <p>
+          Isra Software and Computer Company was established in 1997 in Nablus
+          as a specialized in the production of software at palestine and Arab
+          Countries.
+        </p>
+        <p>
+          Includes more than 50 employees distributed in the following main
+          departments (Research and Development, Training and Operation,
+          Marketing and Sales, Finance, Audit and Quality).
+        </p>
+        <p>
+          In addition to the company's headquarters in the city of Nablus, the
+          company's branch was opened in Ramallah in 2004 to serve and fllow-up
+          customers in the central and southern regions.
+        </p>
+        <a href="page5.html">next page</a><br>
+        <a href="page3.html">previous page</a><br>
+      </article>
+    </section>
+    <footer>
+      <p>
+        WebSite: www.iscosoft.com | Email: info@iscosoft.com | Phone:
+        97092373001 | Fax: 97092373002
+      </p>
+    </footer>
+  </body>
+</html>

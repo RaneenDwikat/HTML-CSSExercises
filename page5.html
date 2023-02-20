@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Isra' Software & Computer Co.</h1>
+    <p id="text">
+      Isra Software and Computer Company was established in 1997 in Nablus as a
+      specialized in the production of software at palestine and Arab Countries.
+    </p><br>
+    <button type="button" onclick="changeStyle()">change text style</button><br>
+    <img src="company.png" alt="ISCOSOFT" id="img" width="500" height="180"><br>
+    <button type="button" onclick="ISCOSOFT()">ISCOSOFT</button>
+    <button type="button" onclick="Google()">Google</button>
+    <button type="button" onclick="Microsoft()">Microsoft</button><br>
+    <p id="text1">Clicked Button: ISCOSOFT</p><br>
+    <a href="page4.html">previous page</a><br>
+    <script>
+           function changeStyle(){
+            document.getElementById("text").style.color="blue";
+            document.getElementById("text").style.backgroundColor="yellow";
+            document.getElementById("text").style.fontSize="24px";
+           } 
+           function ISCOSOFT(){
+            document.getElementById("img").src="company.png";
+            document.getElementById("text1").innerHTML="Clicked Button: ISCOSOFT";
+          }
+          function Microsoft(){
+            document.getElementById("img").src="microsoft.png";
+            document.getElementById("text1").innerHTML="Clicked Button: Microsoft";
+          }
+          
+          function Google(){
+            document.getElementById("img").src="google.png";
+            document.getElementById("text1").innerHTML="Clicked Button: Google";
+          }
+
+    </script>
+  </body>
+</html>
