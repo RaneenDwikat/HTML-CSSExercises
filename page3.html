@@ -2,6 +2,9 @@
 <html>
     <head>
         <style>
+            body{
+                padding: 10px;
+            }
             .header{
                 display: block;
                 background-color: yellow;
@@ -15,13 +18,15 @@
                 border: 1px solid black;
                 width: 60px;
                 height: 80px;
+                padding-left: 5px;
+                padding-top: 5px;
             }
             .relativeClass{
 
                 display: block;
                 position: relative;
                 width: 400px;
-                height: 150px;
+                height: 200px;
                 border: 3px solid orange;
             }
             .absoluteClass{
@@ -29,13 +34,13 @@
                 position: absolute;
                 width: 150px;
                 height: 100px;
-                left:245px;
-                bottom: 10px;
+                right:0px;
+                top: 80px;
                 border: 3px solid blue; 
             }
             .overflowP{
                 margin: 10px;
-                padding: 5px;
+                padding: 10px;
                 background-color: lightgray;
                 width: 200px;
                 height: 100px;
@@ -45,6 +50,10 @@
         </style>
     </head>
     <body>
+        <a style="float: left;padding-right: 10px;" href="page2.html">page2</a>
+        <a style="float: left;padding-right: 10px;" href="page3.html">page3</a>
+        <a style="float: left;padding-right: 10px;" href="page4.html">page4</a>
+        <a style="float: left;padding-right: 10px;" href="page5.html">page5</a><br>
         <p>Isra Software and Computer Company was established in 1997 in Nablus as a specialized in the production of software at palestine and Arab Countries.
             <span class="header">ISCOSOFT</span>
             includes more than 50 employees distributed in the following main departments (Research and Development, Training and Operation, Marketing and Sales, Finance, Audit and Quality).
@@ -63,7 +72,6 @@
         <div class="overflowP">
             You can use the overflow property when you want to have better control of the layout. The overflow property specifies what happens if content overflows an element's box.
         </div>
-        <a href="page4.html">next page</a><br>
-        <a href="page2.html">previous page</a><br>
+
     </body>
 </html>
