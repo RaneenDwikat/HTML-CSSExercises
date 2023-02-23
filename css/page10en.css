@@ -6,14 +6,13 @@ header {
   text-align: center;
   height: auto;
   width: 100%;
-  background-color: DodgerBlue;
+  background-color: skyblue;
   padding: 20px;
 }
 
 img {
   padding-left: 30px;
   float: left;
-  padding-left: 30px;
   opacity: 0.5;
 }
 
@@ -42,7 +41,7 @@ article {
 }
 
 footer {
-  background-color: DodgerBlue;
+  background-color: skyblue;
   padding: 20px;
   text-align: center;
   color: white;
@@ -60,11 +59,19 @@ a:not(.arabic) {
   font-weight: bold;
   background-color: white;
   text-decoration: none;
-  border: 2px solid DodgerBlue;
+  border: 2px solid skyblue;
   padding: 10px;
   display: block;
   text-align: center;
-  margin: 10px;
+  margin: 0px 30px;
+}
+
+.arabic {
+  text-decoration: none;
+}
+
+.arabic:hover {
+  text-decoration: underline;
 }
 
 p {
@@ -83,8 +90,8 @@ img:hover {
 }
 
 a:hover:not(.arabic) {
-  background-color: lightgray;
-  text-decoration: underline;
+  background-color: skyblue;
+  color: white;
 }
 
 /*# sourceMappingURL=page10en.css.map */

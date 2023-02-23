@@ -6,7 +6,7 @@ header {
   text-align: center;
   height: auto;
   width: 100%;
-  background-color: DodgerBlue;
+  background-color: skyblue;
   padding: 20px;
 }
 
@@ -43,7 +43,7 @@ article {
 }
 
 footer {
-  background-color: DodgerBlue;
+  background-color: skyblue;
   padding: 20px;
   text-align: center;
   color: white;
@@ -59,12 +59,12 @@ footer {
 a:not(.english) {
   background-color: white;
   text-decoration: none;
-  border: 2px solid rgb(84, 82, 82);
+  border: 2px solid skyblue;
   padding: 10px;
   display: block;
   text-align: center;
-  color: rgb(84, 82, 82);
-  margin: 10px;
+  color: black;
+  margin: 0px 30px;
 }
 
 li {
@@ -82,13 +82,21 @@ p::first-line {
   font-size: 20px;
 }
 
+.english {
+  text-decoration: none;
+}
+
+.english:hover {
+  text-decoration: underline;
+}
+
 img:hover {
   opacity: 1;
 }
 
 a:hover:not(.english) {
-  background-color: lightgray;
-  text-decoration: underline;
+  background-color: skyblue;
+  color: white;
 }
 
 /*# sourceMappingURL=page10ar.css.map */

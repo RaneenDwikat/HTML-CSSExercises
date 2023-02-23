@@ -1,7 +1,6 @@
-$font-color:rgb(84, 82, 82);
+$font-color:black;
 $primary-color:white;
-$backgroun-color:DodgerBlue
-;
+$backgroun-color: skyblue;
 * {
     box-sizing: border-box;
 }
@@ -61,12 +60,12 @@ section{
 a:not(.english) {
   background-color: white ;
   text-decoration: none;
-  border: 2px solid $font-color;
+  border: 2px solid $backgroun-color;
   padding: 10px;
   display: block;
   text-align: center;
   color: $font-color;
-  margin: 10px;
+  margin: 0px 30px;
 }
 
 li {
@@ -86,12 +85,16 @@ p::first-line {
 
 }
 
-
+.english{
+  text-decoration: none;
+}
+.english:hover{
+  text-decoration: underline;
+}
 img:hover{
-  opacity: 1.0;
+opacity: 1.0;
 }
 
 a:hover:not(.english){
-  background-color: lightgray;
-  text-decoration: underline;
-}
+  background-color: $backgroun-color;
+color: white;}

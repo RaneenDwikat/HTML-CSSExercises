@@ -6,6 +6,8 @@
     <style>
       img {
         padding-left: 30px;
+        padding-right: 0px;
+        opacity: 0.5;
         float: left;
       }
       nav {
@@ -28,11 +30,21 @@
         padding: 10px;
         display: block;
         text-align: center;
-        margin: 10px;
+        margin: 0px 30px;
+
+      }
+      .arabic:hover{
+        text-decoration: underline;
       }
       a:hover:not(.arabic){
-        background-color: lightgray;
+        background-color: grey;
+        color:white;
+      }
+      a .arabic:hover{
         text-decoration: underline;
+      }
+      img:hover{
+        opacity: 1.0;
       }
     </style>
   </head>
@@ -40,19 +52,18 @@
     <header>
       <img src="../company.png" alt="iscosoft" title="iscosoft" />
       <h1>Isra' Software & Computer Co.</h1>
-      <a href="page9ar.html" class="arabic" style="float: right; color: white;">العربية</a>
+      <a href="page9ar.html" class="arabic" style="text-decoration: none;float: right; color: white;">العربية</a>
 
     </header>
     <section>
-      <nav>
+      <nav><br>
           <a href="#">Products</a>
           <a href="#">Contact us</a>
           <a href="#">About</a>
-          <a  href="page6.html"> صفحة 6</a>
-        <a href="page7en.html">page 7</a>
-        <a href="page7ar.html">صفحة 7</a>
-          <a href="page8.html" >صفحة 8</a>
-          <a href="page10ar.html">صفحة 10</a>
+          <a  href="page6.html"> page 6</a>
+          <a href="page7en.html">page 7</a>
+          <a href="page8.html" >page 8</a>
+          <a href="#" style="background-color: grey;color:white;">page 9</a>
           <a href="page10en.html">page 10</a>
           <br>
       </nav>

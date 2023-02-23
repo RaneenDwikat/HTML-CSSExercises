@@ -1,6 +1,6 @@
 $font-color:rgb(84, 82, 82);
 $primary-color:white;
-$background-color:DodgerBlue
+$background-color:skyblue
 ;
 * {
     box-sizing: border-box;
@@ -18,7 +18,6 @@ header {
 img {
     padding-left: 30px;
     float: left;
-    padding-left: 30px;
     opacity: 0.5;
 }
 
@@ -67,9 +66,14 @@ a:not(.arabic) {
     padding: 10px;
     display: block;
     text-align: center;
-    margin: 10px;
+    margin: 0px 30px;
 }
-
+.arabic{
+  text-decoration: none;
+}
+.arabic:hover{
+  text-decoration: underline;
+}
 
 p {
     line-height: 40px;
@@ -90,6 +94,6 @@ p::first-line {
   }
  
   a:hover:not(.arabic){
-    background-color: lightgray;
-    text-decoration: underline;
+    background-color: skyblue;
+    color: white;
   }
