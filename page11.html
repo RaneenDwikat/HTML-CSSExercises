@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .title{
+                background-color: white;
+                border: 2px solid black;
+                font-size: 15px;
+                width: 100%;
+                height: 30px;
+                min-width: 100px;
+                max-width: 300px;
+                text-align: center;
+                padding: 10px;
+            }
+            .numbers,.clear,.equal{
+                background-color: lightgray;
+                color: black;
+                border: 2px solid black;
+                width: 100%;
+                height: 50px;
+                min-width: 60px;
+                max-width: 100px;
+                font-size: 20px;
+            }
+            button:not(.clear):not(.equal):hover{
+                background-color: orange;
+            }
+            button:not(.clear):not(.equal):active{
+                background-color: green;
+            }
+            .clear{
+               background-color: red;
+               color:white;
+               font-size: 20px;
+               cursor: pointer; 
+            }
+            .equal{
+                background-color: darkorange;
+                color: white;
+                cursor: pointer;
+                font-size: 20px;
+            }
+            #input{
+                pointer-events: none;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="title">
+            My Calculator
+        </div>
+        <table>
+            <tr>
+                <td colspan="3"><input type="text" style="border: 1px solid black; height: 50px; font-size: 20px;" id="input"></td>
+                <td><button type="button" class="clear" onclick="Clear()">c</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="numbers" value="1" onclick="display(1)">1</button></td>
+                <td><button type="button" class="numbers" value="2" onclick="display(2)">2</button></td>
+                <td><button type="button" class="numbers" value="3" onclick="display(3)">3</button></td>
+                <td><button type="button" class="numbers" onclick="display('/')">/</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="numbers" value="4" onclick="display(4)">4</button></td>
+                <td><button type="button" class="numbers" value="5" onclick="display(5)">5</button></td>
+                <td><button type="button" class="numbers" value="6" onclick="display(6)">6</button></td>
+                <td><button type="button" class="numbers" onclick="display('-')">-</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="numbers" value="7" onclick="display(7)">7</button></td>
+                <td><button type="button" class="numbers" value="8" onclick="display(8)">8</button></td>
+                <td><button type="button" class="numbers" value="9" onclick="display(9)">9</button></td>
+                <td><button type="button" class="numbers" onclick="display('+')">+</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" class="numbers" value="." onclick="display('.')">.</button></td>
+                <td><button type="button" class="numbers" value="0" onclick="display(0)">0</button></td>
+                <td><button type="button" class="equal" onclick="calculate()">=</button></td>
+                <td><button type="button" class="numbers" onclick="display('*')">*</button></td>
+            </tr>
+        </table>
+<script>
+    function display(a){
+        var input=document.getElementById("input").value;
+        // input=input.toSting();
+        input=input.concat("",a);
+        document.getElementById("input").value=input;
+        return;
+    }
+    function Clear(){
+        document.getElementById("input").value="";
+        console.log("pressed");
+        return;
+    }
+    function calculate(){
+        var x = document.getElementById('input').value;
+        var y = eval(x);
+        document.getElementById('input').value = y;
+        return;
+    }
+</script>
+    </body>
+</html>

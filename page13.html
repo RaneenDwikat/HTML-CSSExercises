@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin: 30px;
+                font-size: 15px;
+            }
+            table,td{
+                border: 1px solid black;
+                background-color: lightgray;
+                border-collapse: collapse;
+
+            }
+         
+            table{
+                margin: 30px;
+                float: left;
+            }
+            td{
+                padding: 5px;
+            }
+          
+            input{
+                width: 95%;
+            }
+            input:not(#id):not(#idimg){
+                pointer-events: none;
+
+            }
+            .result{
+                background-color: white;
+
+                
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption>Get user info using Async/Await</caption>
+            <tr>
+                <td width="30%"><p>ID:</p></td>
+                <td width="70%" colspan="2"><input type="text" id="id"></td>
+            </tr>
+            <tr>
+                <td><p></p></td>
+                <td colspan="2"><button type="button" class="getUser" onclick="getUser()">get user</button>
+                <button type="reset" class="reset" onclick="reset()">reset</button>
+                </td>
+            </tr>
+            <tr>
+                <td><p>name:</p></td>
+                <td colspan="2"><input type="text" id="name"></td>
+            </tr>
+            <tr>
+                <td><p>user name:</p></td>
+                <td colspan="2"><input type="text" id="userName"></td>
+            </tr>
+            <tr>
+                <td><p>email:</p></td>
+                <td colspan="2"><input type="text" id="email"></td>
+            </tr>
+            <tr>
+                <td><p>city:</p></td>
+                <td colspan="2"><input type="text" id="city"></td>
+            </tr>
+            <tr>
+                <td><p>street:</p></td>
+                <td colspan="2"><input type="text" id="street"></td>
+            </tr>
+            <tr>
+                <td><p>zipcode:</p></td>
+                <td colspan="2"><input type="text" id="zipcode"></td>
+            </tr>
+
+            <tr>
+                <td><p>The Result is:</p></td>
+                <td class="result" colspan="2"><span id="result"></span></td>
+            </tr>
+        </table>
+
+        <table>
+            <caption>Get image info using Async/Await</caption>
+            <tr>
+                <td width="90px"><p>ID:</p></td>
+                <td width="300px" colspan="2"><input type="text" id="idimg"></td>
+            </tr>
+            <tr>
+                <td><p></p></td>
+                <td colspan="2"><button type="button" class="getImage" onclick="getImage()">get image</button>
+                <button type="reset" class="reset" onclick="resetImg()">reset</button>
+                </td>
+            </tr>
+            <tr>
+                <td><p>album id:</p></td>
+                <td colspan="2"><input type="text" id="albumId"></td>
+            </tr>
+            <tr>
+                <td height="280px"><p>image:</p></td>
+                <td colspan="2" height="280pxpx"><img src="image.png" alt="image" title="image" id="img"></td>
+            </tr>
+            <tr>
+                <td><p>The Result is:</p></td>
+                <td class="resultImg" colspan="2"><span id="resultImg"></span></td>
+            </tr>
+           
+        </table>
+
+
+
+        <script>
+            function  getUser (){
+                var id=document.getElementById('id').value;
+                if(id==''){
+                    alert("id is empty!");
+                    return;
+                }
+                var url="https://jsonplaceholder.typicode.com/users/"+id;
+                fetch(url)
+                    .then((response) => response.json())
+                        .then((data) => {
+                            document.getElementById('city').value=data.address.city;
+                            document.getElementById('name').value=data.name;
+                            document.getElementById('userName').value=data.username;
+                            document.getElementById('email').value=data.email;
+                            document.getElementById('street').value=data.address.street;
+                            document.getElementById('zipcode').value=data.address.zipcode;
+                            document.getElementById('result').style.color="green";
+                            document.getElementById('result').innerHTML="user found";
+                            
+                        }).catch((e)=>{
+                            document.getElementById('result').style.color="red";
+                            document.getElementById('result').innerHTML="user not found";
+                        });
+            }
+            function reset(){
+                document.getElementById('city').value='';
+                document.getElementById('name').value='';
+                document.getElementById('userName').value='';
+                document.getElementById('email').value='';
+                document.getElementById('street').value='';
+                document.getElementById('zipcode').value='';
+                document.getElementById('result').innerHTML="";
+            }
+            function  getImage(){
+                var id=document.getElementById('idimg').value;
+                if(id==''){
+                    alert("id is empty!");
+                    return;
+                }
+                var url="https://jsonplaceholder.typicode.com/photos/"+id;
+                fetch(url)
+                    .then((response) => response.json())
+                        .then((data) => {
+                            document.getElementById('albumId').value=data.albumId;
+                            document.getElementById('img').src=data.url;
+                            document.getElementById('img').title=data.title;
+                            document.getElementById('img').alt=data.title;
+
+                            document.getElementById('resultImg').style.color="green";
+                            document.getElementById('resultImg').innerHTML="image found";
+                            
+                        }).catch((e)=>{
+                            document.getElementById('resultImg').style.color="red";
+                            document.getElementById('resultImg').innerHTML="image not found";
+                        });
+            }
+        function resetImg(){
+            document.getElementById('idimg').value="";
+            document.getElementById('albumId').value="";
+            document.getElementById('img').src="image.png";
+            document.getElementById('img').title="img";
+            document.getElementById('img').alt="img";
+
+            document.getElementById('resultImg').style.color="green";
+            document.getElementById('resultImg').innerHTML="";
+        }
+        </script>
+    </body>
+</html>
