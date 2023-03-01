@@ -10,9 +10,7 @@
                 border: 1px solid black;
                 background-color: lightgray;
                 border-collapse: collapse;
-
             }
-         
             table{
                 margin: 30px;
                 float: left;
@@ -20,18 +18,14 @@
             td{
                 padding: 5px;
             }
-          
             input{
                 width: 95%;
             }
             input:not(#id):not(#idimg){
                 pointer-events: none;
-
             }
             .result{
                 background-color: white;
-
-                
             }
         </style>
     </head>
@@ -44,9 +38,7 @@
             </tr>
             <tr>
                 <td><p></p></td>
-                <td colspan="2"><button type="button" class="getUser" onclick="getUser()">get user</button>
-                <button type="reset" class="reset" onclick="reset()">reset</button>
-                </td>
+                <td colspan="2"><button type="button" class="getUser" onclick="getUser()">get user</button><button type="reset" class="reset" onclick="reset()">reset</button></td>
             </tr>
             <tr>
                 <td><p>name:</p></td>
@@ -78,36 +70,29 @@
                 <td class="result" colspan="2"><span id="result"></span></td>
             </tr>
         </table>
-
         <table>
             <caption>Get image info using Async/Await</caption>
             <tr>
-                <td width="90px"><p>ID:</p></td>
+                <td width="90px">ID:</td>
                 <td width="300px" colspan="2"><input type="text" id="idimg"></td>
             </tr>
             <tr>
-                <td><p></p></td>
-                <td colspan="2"><button type="button" class="getImage" onclick="getImage()">get image</button>
-                <button type="reset" class="reset" onclick="resetImg()">reset</button>
-                </td>
+                <td></td>
+                <td colspan="2"><button type="button" class="getImage"   onclick="getImage()">get image</button><button type="reset" class="reset" onclick="resetImg()">reset</button></td>
             </tr>
             <tr>
-                <td><p>album id:</p></td>
+                <td>album id:</td>
                 <td colspan="2"><input type="text" id="albumId"></td>
             </tr>
             <tr>
-                <td height="280px"><p>image:</p></td>
-                <td colspan="2" height="280pxpx"><img src="image.png" alt="image" title="image" id="img"></td>
+                <td height="280px">image:</td>
+                <td colspan="2" height="280pxpx"><img src="image.png" alt="image"  height="280px" title="image" id="img"></td>
             </tr>
             <tr>
-                <td><p>The Result is:</p></td>
+                <td>The Result is:</td>
                 <td class="resultImg" colspan="2"><span id="resultImg"></span></td>
-            </tr>
-           
+            </tr>  
         </table>
-
-
-
         <script>
             function  getUser (){
                 var id=document.getElementById('id').value;
@@ -127,7 +112,6 @@
                             document.getElementById('zipcode').value=data.address.zipcode;
                             document.getElementById('result').style.color="green";
                             document.getElementById('result').innerHTML="user found";
-                            
                         }).catch((e)=>{
                             document.getElementById('result').style.color="red";
                             document.getElementById('result').innerHTML="user not found";
@@ -152,18 +136,17 @@
                 fetch(url)
                     .then((response) => response.json())
                         .then((data) => {
+                            if(data.title){
                             document.getElementById('albumId').value=data.albumId;
                             document.getElementById('img').src=data.url;
                             document.getElementById('img').title=data.title;
                             document.getElementById('img').alt=data.title;
-
                             document.getElementById('resultImg').style.color="green";
                             document.getElementById('resultImg').innerHTML="image found";
-                            
-                        }).catch((e)=>{
+                            }else{
                             document.getElementById('resultImg').style.color="red";
                             document.getElementById('resultImg').innerHTML="image not found";
-                        });
+                            }});
             }
         function resetImg(){
             document.getElementById('idimg').value="";
@@ -171,7 +154,6 @@
             document.getElementById('img').src="image.png";
             document.getElementById('img').title="img";
             document.getElementById('img').alt="img";
-
             document.getElementById('resultImg').style.color="green";
             document.getElementById('resultImg').innerHTML="";
         }

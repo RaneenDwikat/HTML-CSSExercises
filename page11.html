@@ -4,20 +4,21 @@
         <style>
             .title{
                 background-color: white;
-                border: 2px solid black;
+                border: 2px solid grey;
                 font-size: 15px;
-                width: 100%;
                 height: 30px;
                 min-width: 100px;
                 max-width: 300px;
                 text-align: center;
-                padding: 10px;
+            }
+            table{
+                border: 2px solid grey;
+                background-color: lightgrey;
             }
             .numbers,.clear,.equal{
                 background-color: lightgray;
                 color: black;
                 border: 2px solid black;
-                width: 100%;
                 height: 50px;
                 min-width: 60px;
                 max-width: 100px;
@@ -47,13 +48,10 @@
         </style>
     </head>
     <body>
-        
-        <div class="title">
-            My Calculator
-        </div>
         <table>
+            <caption class="title">My Calculator</caption>
             <tr>
-                <td colspan="3"><input type="text" style="border: 1px solid black; height: 50px; font-size: 20px;" id="input"></td>
+                <td colspan="3"><input type="text" style="border: 1px solid black;width:180px;height: 45px;font-size: 20px;" id="input"></td>
                 <td><button type="button" class="clear" onclick="Clear()">c</button></td>
             </tr>
             <tr>

@@ -8,20 +8,15 @@
             table,td{
                 border: 1px solid black;
                 background-color: lightgray;
-                border-collapse:separate;
             }
             td{
-                height: 20px;
-                width: fit-content;
                 padding: 5px;
             }
             input,button{
-                height: 30px;
                 font-size: 15px;
             }
             .result{
                 background-color: white;
-                
             }
         </style>
     </head>
@@ -29,25 +24,64 @@
         <table>
             <caption>Calculate multiplication and division of two numbers</caption>
             <tr>
-                <td><p>First Number:</p></td>
+                <td>First Number:</td>
                 <td colspan="2"><input type="text" id="firstNumber"></td>
             </tr>
             <tr>
-                <td><p>second Number:</p></td>
+                <td>second Number:</td>
                 <td colspan="2"><input type="text" id="secondNumber"></td>
             </tr>
             <tr>
-                <td><p></p></td>
+                <td></td>
                 <td colspan="2"><button type="button" class="multiply" onclick="multiply()">multiply</button>
                 <button type="button" class="divide" onclick="divide()">divide</button>
                 </td>
             </tr>
             <tr>
-                <td><p>The Result is:</p></td>
+                <td>The Result is:</td>
                 <td class="result" colspan="2"><span id="result"></span></td>
             </tr>
+        </table><br>
+        <table>
+            <caption>Convert temprature from and to cilsius, fahrenheit</caption>
+            <tr>
+                <td>cilsius:</td>
+                <td colspan="2"><input type="text" id="cilsius"></td>
+            </tr>
+            <tr>
+                <td>fahrenheit:</td>
+                <td colspan="2"><input type="text" id="fahrenheit"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2"><button type="button" class="convert" onclick="convert()">convert</button> </td>
+            </tr>
+            <tr>
+                <td>The Result is:</td>
+                <td class="result" colspan="2"><span id="tempresult"></span></td>
+            </tr>
         </table>
+       
         <script>
+            function convert(){
+                var fahrenheit= document.getElementById("fahrenheit").value;
+                var cilsius=document.getElementById("cilsius").value;
+                if(cilsius=="" && fahrenheit==""){
+                    alert("fahrenheit and cilsius are empty");
+                    return;
+                }else if(cilsius==""&& fahrenheit!=""){
+                    var result=(fahrenheit-32)/1.8;
+                    document.getElementById("cilsius").value=result +" °C";
+                    document.getElementById("tempresult").innerHTML= fahrenheit+" °F is " +result+" °C";
+                    return;
+                }else if(cilsius!=""&& fahrenheit==""){
+                    var result=(cilsius*1.8)+32;
+                    document.getElementById("fahrenheit").value=result +" °F";
+                    document.getElementById("tempresult").innerHTML= cilsius+" °C is " +result+" °F";
+                    return;
+                }
+
+            }
             function multiply(){
                 var num1= document.getElementById("firstNumber").value;
                 console.log(num1);
