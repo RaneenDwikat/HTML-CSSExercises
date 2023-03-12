@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Encryptions from './component/encryptions';
+import MyComponent from './component/myComponent';
 function App() {
+  var enc=new Encryptions();
+  var dec=new Encryptions();
+
+  function handleClicken(input){
+    const result= enc.encryption(input)
+    return result.toString();
+  }
+  function handleClickdec(input){
+    const result= dec.decryption(input)
+    return result.toString();
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyComponent  handleClick={handleClicken} process={'encrypt'}/>
+      <MyComponent  handleClick={handleClickdec} process={'decrypt'}/>
     </div>
   );
 }
