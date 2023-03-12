@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <script>
+function foodsAndDrinks(array){
+    array.forEach(element => {
+        console.log(element)
+    });
+}
+
+function getAge()
+{
+	const a=new Date(1985,1,16); 
+	const b=new Date();
+	
+    var z = b.getFullYear() - a.getFullYear(); 
+	return z;
+}
+
+function PrintNumberAsWord(value)
+{
+  var word = "";
+  switch(value){
+    case 0:
+        word = "zero";
+        break;
+    case 1:
+        word = "one";
+        break;
+    case 2:
+        word = "two";
+        break;
+    case 3:
+        word = "three";
+        break;
+    case 4:
+        word = "four";
+        break;
+    case 5:
+        word = "five";
+        break;
+    default:
+        word= "value is not between 0 and 5";
+        break;
+  }
+  return word;
+}
+    var a=[1,2,3]
+	var x = ['lemonade', 'soda', 'tea', 'water'];
+	var y = ['beans', 'chicken', 'rice'];
+    foodsAndDrinks(a);foodsAndDrinks(x);foodsAndDrinks(y);
+  </script>
+</html>

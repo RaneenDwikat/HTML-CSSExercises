@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    function _Display(array) {
+      array.forEach((element) => {
+        console.log(element);
+      });
+    }
+
+    function differenceBetweenYears(birthDate, currentDate) {
+      var result = currentDate.getFullYear() - birthDate.getFullYear();
+      console.log(result);
+    }
+
+    var drinks = ["lemonad e", "soda", "tea", "water"];
+    var food = ["beans", "chicken", "rice"];
+    var birthDate = new Date(1985, 1, 16);
+    var currentDate = new Date();
+	
+    _Display(drinks);
+    _Display(food);
+    differenceBetweenYears(birthDate, currentDate);
+  </script>
+</html>

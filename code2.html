@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    function _Display(x) {
+      x.forEach((element) => {
+        console.log(element);
+      });
+    }
+
+    function differenceBetweenYears(a, b) {
+      var z = b.getFullYear() - a.getFullYear();
+      console.log(z);
+    }
+
+    var x = ["lemonad e", "soda", "tea", "water"];
+    var y = ["beans", "chicken", "rice"];
+    var a = new Date(1985, 1, 16);
+    var b = new Date();
+	
+    _Display(x);
+    _Display(y);
+    differenceBetweenYears(a, b);
+  </script>
+</html>
